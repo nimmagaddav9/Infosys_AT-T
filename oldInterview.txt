@@ -1,0 +1,896 @@
+Previous Interview question and answers
+
+1. Tell me about yourself and your journey into front-end development.
+
+I am a core UI Developer with 12+ years of experience building .com websites for different organizations using HTML5, CSS3, JavaScript, Angular 18, React.js, and Redux.
+In the past 2 years, I worked on the React migration team, where I converted the .net pages to react on united.com.
+Frontend is React, and used ATMOS (Own library) components used company wide.
+
+Worked on Security features for users where they can manage there account like Forgot password, Forgot MileagePlus number,
+security questions, Sign-in features, Miles-Pooling, United Club pass, Recent Activity, dashboard updates and
+KTN(Known Traveler Number), Accessibility guidelines features on united.com.
+
+used middleware such as redux-saga to handle asynchronous tasks such as API calls, data fetching, and impure actions in a more organized and efficient way.
+
+Previously worked with Accelerator team for Visa Inc. remediation of MBDA modules like Application Management, Account Management, Portfolio Management, Analytics, Recurring billing, Virtual Terminal, etc for bank users like Wells Fargo, Bank of America, etc
+
+Capital Group worked on DAVIS Project. Davis stands for Data visualization where we build different highcharts using react and integrate into the AEM., the backend is Java. Previously I worked on Creative Workbench, a writing tool where articles are published on capital group websites.
+
+At Cerner Corporation worked on the medical examination forms.
+
+In Office Depot worked on black Friday reporting.
+
+Satinos Technologies created a tax portal and a schoomin website for the Vignan schools.
+
+2. Walk me through your latest project – what problems did you solve?
+
+React migration - Converted pages in .net to react.
+The new initiative worked on Miles-Pooling( points you get after traveling), TSA Precheck, Account security and management features, and Under18.
+
+3. How does the virtual DOM work in React?
+
+Suppose line of code is changed , processing is done on particular line.
+It will process the whole code in real DOM. Virtual DOM is faster.
+
+4. What’s the difference between props and state in React?
+
+Props (short for "properties") are read-only and passed from a parent component to a child component.
+They allow components to communicate by passing data down the component tree.
+Since props are immutable within the receiving component, they cannot be changed by the component itself.
+
+State, on the other hand, is mutable and managed within a component.
+It represents data that can change over time due to user interactions or other factors.
+A component's state can be updated using React's useState hook (in functional components) or
+setState (in class components), causing the component to re-render.
+
+5. What is useEffect and how have you used it in your projects?
+
+In React, useEffect is a hook that allows you to perform side effects in functional components.
+Side effects include things like fetching data, updating the DOM, setting up subscriptions, and cleaning up resources.
+
+How useEffect Works:
+useEffect runs after the component renders.
+
+It can be configured to run only once, on every render, or when specific values change.
+
+You can return a function inside useEffect to clean up resources (like removing event listeners or unsubscribing from an API).
+
+<!-- import { useEffect, useState } from "react";
+
+function ExampleComponent() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    console.log(`Count changed to ${count}`);
+
+    return () => {
+      console.log("Cleanup before next useEffect runs or component unmounts");
+    };
+  }, [count]); // Runs whenever "count" changes
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+} -->
+
+How I've Used useEffect in Projects:
+Fetching Data: I’ve used useEffect to fetch API data when a component mounts ([] as the dependency array).
+
+Listening to Window Events: Tracking things like window resizing or scroll position changes.
+
+Setting Up Timers: Managing intervals and timeouts for features like countdown timers.
+
+Cleaning Up Resources: Removing event listeners or stopping subscriptions when a component unmounts.
+
+6. How do you manage API calls and error handling in React?
+
+Ans: 1. Using Fetch or Axios for API Calls
+You can make API requests using fetch or axios. Axios provides some extra features like automatic JSON parsing
+and request cancellation.
+
+    2. Using Axios for Cleaner Code
+    3. Handling Errors Gracefully
+    4. Using useEffect for API Calls
+    5. Avoiding Memory Leaks
+
+7. What’s the folder structure you prefer for a scalable front-end project?
+
+A well-organized folder structure is crucial for scalability, maintainability, and readability in a front-end project. Here’s the structure I usually recommend for React-based projects (but it applies to other frameworks as well):
+
+/project-root
+├── public/ # Static assets (favicon, index.html)
+├── src/ # Main source code
+│ ├── assets/ # Images, fonts, global styles
+│ ├── components/ # Reusable UI components
+│ ├── pages/ # Individual pages/views
+│ ├── hooks/ # Custom React hooks
+│ ├── utils/ # Utility/helper functions
+│ ├── services/ # API calls, authentication logic
+│ ├── contexts/ # Global state management (Context API)
+│ ├── styles/ # Global styles or component-specific styles
+│ ├── store/ # State management (Redux, Zustand, etc.)
+│ ├── config/ # Environment variables, app settings
+│ ├── routes/ # Centralized route definitions
+│ ├── tests/ # Unit & integration tests
+│ ├── index.tsx # App entry point
+│ ├── App.tsx # Root component
+├── .env # Environment variables
+├── package.json # Dependencies & scripts
+├── tsconfig.json # TypeScript config (if using TypeScript)
+├── README.md # Documentation
+
+8. What is the role of Express.js in the MERN stack?
+
+Express.js plays a crucial role in the MERN stack by acting as the backend framework that connects the front end (React) with the database (MongoDB) via Node.js.. Here's how it fits into the stack:
+
+🚀 Role of Express.js in MERN:
+
+1. Handles HTTP Requests & Routes
+
+Express.js provides a simple and flexible way to define API routes (GET, POST, PUT, DELETE) that interact with the MongoDB database.
+
+2. Middleware Integration
+
+It allows middleware functions that handle authentication, logging, error handling, and request parsing (like body-parser).
+
+3. Database Connectivity
+
+Express.js interacts with MongoDB (usually via Mongoose) to perform CRUD operations efficiently.
+
+4. Server-Side Logic & Business Rules
+
+This is where backend logic is implemented—handling authentication, form validation, and access control.
+
+5. API Development for Frontend Communication
+
+The React front end makes API calls to Express.js, which then fetches or modifies data in MongoDB.
+
+9. How do you optimize performance in a React app?
+
+1. Memoization with useMemo and useCallback: Use this hooks to memoize values and, reducing unnecessary recalculations.
+1. Optimizing Renders with React.Fragment: Use it to avoid unnecessary wrapper elements that could cause additional DOM nodes.
+1. Lazy loading with React.lazy: Use it to load components lazily, reducing the intial bundle size and imporving intial loading performance.
+1. Code splitting: Employ code splitting to divide your application into smaller chunks that are loaded on demand, improving initial load times.
+1. Optimizing Images and Assets: Compress and optimize images, use responsive images and leverage lazy loading for images to reduce network and rendering overhead.
+
+1. Difference Between Flex and Grid
+• Flexbox (Flex):
+○ One-dimensional layout: Arranges elements in a row or column.
+○ Ideal for simple layouts with horizontal or vertical alignment.
+○ Responsive: Easily adapts to different screen sizes.
+○ Great for navigation bars, footers, and single-dimensional content sections.
+• CSS Grid (Grid):
+○ Two-dimensional layout: Creates rows and columns for complex layouts.
+○ Superior for intricate structures with precise positioning.
+○ Responsive: Maintains flexibility across devices.
+○ Perfect for dashboards, product listings, and multi-column layouts.
+Visual Demonstration:
+• Flex: Show a navigation bar with elements aligned horizontally.
+• Grid: Display a product listing with items arranged in rows and columns.
+Choosing Between Flex and Grid:
+• For simple layouts or single-dimensional alignment, flexbox often suffices.
+• For complex structures with precise positioning, opt for grid.
+• They can even be combined for more versatile layouts.
+Example (Code Snippet):
+JavaScript
+// Flexbox for a navigation bar
+<nav style={{ display: 'flex', justifyContent: 'space-between' }}>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+// Grid for a product listing
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
+  <div className="product">Product 1</div>
+  <div className="product">Product 2</div>
+  {/* More products... */}
+</div>
+
+1. getElementById vs. getElementByClass
+   • getElementById:
+   ○ Retrieves an element by its unique ID.
+   ○ Faster when you know the exact ID.
+   ○ Use for elements that should only appear once.
+   • getElementsByClassName:
+   ○ Returns an array of elements with the same class name.
+   ○ Useful when you have multiple elements with the same class.
+   ○ Can be less performant for large numbers of elements.
+   Choosing Between getElementById and getElementByClass:
+   • Use getElementById for elements with a unique ID.
+   • Use getElementsByClassName for multiple elements with the same class.
+   Example (Code Snippet):
+   JavaScript
+   const heading = document.getElementById('main-heading'); // Use for unique ID
+   const buttons = document.getElementsByClassName('btn'); // Use for multiple buttons
+   Use code with caution.
+
+1. What are ES6 Features ?
+
+
+    • Arrow Functions: Concise syntax for defining functions.
+
+JavaScript
+const greet = name => `Hello, ${name}!`;
+
+    • Template Literals: Embedded expressions within strings for dynamic content.
+
+JavaScript
+const message = `Welcome, ${user.name}`;
+
+    • Destructuring: Extract properties from objects or arrays.
+
+JavaScript
+const { firstName, lastName } = user;
+
+    • Classes: Object-oriented programming with inheritance.
+
+JavaScript
+class Person {
+constructor(name) {
+this.name = name;
+}
+
+greet() {
+console.log(`Hello, I'm ${this.name}`);
+}
+}
+
+    • Modules: Organize code in reusable modules.
+
+JavaScript
+// myModule.js
+export function add(a, b) {
+return a + b;
+}
+
+// main.js
+import { add } from './myModule.js';
+console.log(add(2, 3));
+
+13. What are promises ?
+
+
+    • Promises: Represent the eventual completion (or failure) of an asynchronous operation.
+    • Benefits:
+    	○ Improved code readability and maintainability by handling asynchronous operations asynchronously.
+    	○ Chaining of asynchronous operations for a more fluid flow.
+    	○ Error handling for potential issues during asynchronous execution.
+
+Code Example (Using Fetch API):
+JavaScript
+fetch('https://api.example.com/data')
+.then(response => response.json())
+.then(data => {
+console.log(data);
+// Process the data
+})
+.catch(error => {
+console.error(error);
+// Handle errors
+});
+
+14. Redux is a state management library for JavaScript applications, including React. It provides a centralized store to hold application state, actions to update that state, and reducers to handle those updates.
+    • Store: Holds the entire application state as a single JavaScript object tree.
+    • Actions: Plain JavaScript objects describing the intention to change the state.
+    • Reducers: Pure functions that accept the current state and an action, returning the new state.
+    Dispatcher.
+    Pros of Redux:
+    • Predictable State Management: Easier to reason about application state and track changes.
+    • Improved Testability: Easier to test components in isolation due to centralized state.
+    • Scalability: Well-suited for large and complex applications.
+    Cons of Redux:
+    • Boilerplate Code: Requires setting up stores, reducers, actions, and middleware.
+    • Complexity: Learning curve for managing state with reducers and actions.
+
+15. Why Fetch Inside useEffect?
+16. We typically fetch data inside useEffect in React because it ensures
+    the data is fetched only when the component is mounted (or when
+    dependencies in the array change).
+17. This prevents unnecessary re-renders on every update and improves performance.
+18. Additionally, useEffect allows for easy cleanup of side effects
+    like subscriptions when the component unmounts.
+
+19. What are props in Reactjs ?
+
+Building Blocks of Communication
+Imagine building Lego houses. Each Lego piece has properties that
+define its color, size, and shape. Similarly, in React, props are
+properties passed down from parent components to child components.
+They act as a way for components to communicate and share data.
+This allows you to create reusable and dynamic components!
+
+17. What are different Component Types:
+
+React offers two main types of components:
+
+Class Components: These are like blueprints defining how a
+component behaves and renders. They use the class keyword and
+allow for functionalities like state management and lifecycle methods.
+Structured way.
+
+Functional Components: These are simpler and more concise.
+They are pure functions that take props as input and return JSX
+to describe what the component renders. They're a great choice
+for presentational components.
+
+18. What are states in ReactJS ?
+
+Think of state as the internal memory of a component.
+It allows components to react to user interactions or data changes.
+You can use the useState hook to manage state in functional components.
+
+19. What are stateless components in react ?
+
+Stateless components, essentially functional components,
+don't manage internal state. They simply take props as
+input and return JSX based on those props. This makes
+them lightweight and easier to reason about.
+
+Example of a Stateless Component:
+
+function Greeting(props) {
+return (
+<div>
+<h1>Hello, {props.name}!</h1>
+</div>
+);
+}
+
+20. What are arrow functions in JS ?
+
+Arrow functions (introduced in ES6) are a
+concise way to write JavaScript functions.
+They're often preferred for their cleaner syntax,
+especially when dealing with props and state in React components.
+
+Example of an Arrow Function:
+JavaScript
+
+const handleClick = () => {
+console.log('Button clicked!');
+};
+handleClick()
+
+21. What is redux ? and when to use it ?
+
+Redux (although not strictly required for basic React applications)
+is a popular state management library for managing complex application
+state. It provides a centralized store to hold your application's state,
+actions to update that state, and reducers to handle those updates.
+(Think of it as a central bank for your app's data!)
+
+22. What is JSX is reactjs ?
+
+JSX (JavaScript XML) is a syntax extension that allows you to write
+HTML-like structures within your JavaScript code. This makes
+it easier to visualize and build user interfaces in React components.
+
+Example of JSX:
+
+return (
+
+  <div>
+    <h1>Welcome to My App</h1>
+    <p>This is some content.</p>
+  </div>
+);
+
+23. What is strict mode in JS
+
+React's Strict Mode is a development tool that helps identify potential
+issues in your application code. It enables warnings for deprecated
+features, lifecycle methods, and other potential problems,
+allowing you to catch them early during development.
+
+---
+
+HTML Interview questions
+
+1. HTML5 new features vs HTML4?
+
+Major New Features in HTML5:
+
+Semantic tags: <article>, <section>, <header>, <footer>, <nav>, <main>, etc., for clearer document structure and better SEO.
+
+Multimedia: <audio> and <video> tags allow native embedding of media without third-party plugins.
+
+Graphics: <canvas> for 2D drawing and animation, plus improved SVG support.
+
+Form controls: New input types (email, date, color, etc.), validation, and attributes like placeholder, required, and autofocus.
+
+APIs: Geolocation, offline storage (local/session storage), drag-and-drop, Web Workers for background processing, and WebSockets for real-time communication.
+
+Simplified syntax: Easier doctype and cleaner markup.
+
+Improved accessibility and SEO: Semantic elements help search engines and assistive technologies understand content structure.
+
+2. Storage in HTML?
+
+1. Local Storage (localStorage)
+
+Stores data permanently until manually cleared.
+
+Data is saved across page reloads and browser sessions.
+
+Example:
+localStorage.setItem("username", "Vijay");
+console.log(localStorage.getItem("username")); // Output: Vijay
+
+2. Session Storage (sessionStorage)
+
+Stores data temporarily (only until the browser tab is closed).
+
+Example:
+sessionStorage.setItem("theme", "dark");
+console.log(sessionStorage.getItem("theme")); // Output: dark
+
+3. Cookies (document.cookie)
+
+Used for small amounts of data, typically for tracking user sessions.
+
+Sent to the server with each request.
+
+Example:
+document.cookie = "username=Vijay; expires=Fri, 31 Dec 2025 23:59:59 GMT";
+
+4. IndexedDB
+
+A powerful NoSQL database inside the browser.
+
+Supports complex data storage, including objects.
+
+Example:
+
+let db;
+const request = indexedDB.open("myDatabase", 1);
+request.onsuccess = () => { db = request.result; console.log("Database opened successfully"); };
+
+5. Cache API (Service Workers)
+
+Used for storing resources like files, images, and responses for offline use.
+
+Works well for Progressive Web Apps (PWAs).
+
+Example:
+caches.open("my-cache").then(cache => {
+  cache.add("/index.html");
+});
+
+
+
+3. iframe HTML
+
+<iframe>, short for inline frame, is an HTML element that lets you embed another document (webpage, video, map, etc.) 
+inside the current webpage.
+
+🚀 How <iframe> Works
+An <iframe> allows you to load external content within a designated area on your site.
+
+<iframe src="https://example.com" width="600" height="400"></iframe>
+
+✅ Common Use Cases
+Embedding YouTube videos, Google Maps, or third-party widgets.
+
+Loading external pages without redirecting users.
+
+Displaying ads or content from other sources.
+
+
+4. HTML5 features
+
+Semantic Elements
+
+New elements like <section>, <article>, <header>, <footer>, and <nav> improve the structure and readability of web pages.
+
+Multimedia Support
+
+Native <audio> and <video> elements let you embed media without requiring third-party plugins like Flash.
+
+Why HTML5 is Better?
+✅ Eliminates dependency on external plugins 
+✅ Enhances performance and SEO 
+✅ Optimized for mobile-friendly websites 
+✅ Enables interactive web applications
+
+
+5. which video type support HTML5
+
+✅ MP4 – Best for maximum compatibility across all browsers. 
+✅ WebM – Optimized for the web with good compression and fast loading. 
+✅ Ogg – Open-source, but less widely supported compared to MP4 and WebM.
+
+
+6. Maximum heading tag size?
+In HTML, heading tags range from <h1> to <h6>, with <h1> being the largest and <h6> being the smallest by default.
+
+
+7. marque tag?
+The <marquee> tag in HTML was used to create scrolling text or moving elements across a webpage. 
+However, it's now deprecated and no longer recommended for use.
+
+<marquee behavior="scroll" direction="left">This is moving text!</marquee>
+
+
+8. DOM?
+The DOM (Document Object Model) is a programming interface for web documents that represents the structure of an HTML or 
+XML document as a tree-like hierarchy. 
+It allows JavaScript to dynamically manipulate content, structure, and styles on a webpage.
+
+🚀 Key Features of DOM
+
+✅ Tree Structure Representation
+
+The DOM represents an HTML page as a tree, where elements like <html>, <body>, and <div> are nodes.
+
+✅ Dynamic Content Manipulation
+
+Developers can use JavaScript to add, remove, and modify elements dynamically.
+
+✅ Event Handling
+
+The DOM enables event-driven programming, allowing interactions through events like clicks, key presses, and hovers.
+
+✅ Cross-Browser Compatibility
+
+Works across different browsers, ensuring uniform behavior of web pages.
+
+
+
+9. CSS integrate type in React.js? external (index.css), internal, inline css
+
+✅ Inline Styles – Uses JavaScript objects for styling. 
+✅ CSS Stylesheets – Imports regular CSS files. 
+✅ CSS Modules – Scoped styles to avoid global conflicts. 
+✅ Styled Components – CSS-in-JS for dynamic styling. 
+✅ Tailwind CSS – Utility-first approach with predefined classes.
+
+React and JS Interview questions:
+
+1. what is shouldComponentUpdate?
+
+shouldComponentUpdate() is used to optimize performance by preventing unnecessary re-renders. 
+It returns true (default) to allow rendering or false to block it.
+
+Ex: 
+shouldComponentUpdate(nextProps, nextState) {
+  return nextProps.value !== this.props.value; // Only update if "value" changes
+}
+
+✅ Helps with performance optimization 
+✅ Mainly used in class components (functional components use React.memo) 
+✅ Not required unless optimizing complex UI updates
+
+2. pure component?
+
+A Pure Component in React is a class component that automatically implements shouldComponentUpdate() with a shallow prop 
+and state comparison to prevent unnecessary re-renders.
+
+Ex: import React, { PureComponent } from "react";
+
+class MyComponent extends PureComponent {
+  render() {
+    return <h1>Hello, Pure Component!</h1>;
+  }
+}
+
+
+3. Local Storage (syntax) vs session storage vs cookies
+
+
+Syntax Examples
+1️⃣ Local Storage (Stores data permanently)
+
+localStorage.setItem("username", "Vijay"); // Set item
+console.log(localStorage.getItem("username")); // Get item
+localStorage.removeItem("username"); // Remove item
+
+2️⃣ Session Storage (Clears when tab is closed)
+sessionStorage.setItem("theme", "dark"); // Set item
+console.log(sessionStorage.getItem("theme")); // Get item
+sessionStorage.clear(); // Clear all items
+
+3️⃣ Cookies (Stores small data, sent with HTTP requests)
+document.cookie = "username=Vijay; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+console.log(document.cookie); // Get all cookies
+
+
+4. size of local storage
+The size limit for Local Storage in most modern browsers is around 5MB per domain. 
+This means each website can store up to 5MB of data in Local Storage.
+
+5. context in react js syntax?
+In React.js, Context API allows you to manage global state without passing props manually at every level.
+
+🚀 Syntax Example
+1️⃣ Create Context:
+const MyContext = React.createContext();
+2️⃣ Provide Context:
+<MyContext.Provider value={sharedData}>
+  <ChildComponent />
+</MyContext.Provider>
+
+3️⃣ Consume Context:
+const value = useContext(MyContext);
+
+✅ Helps avoid prop drilling 
+✅ Ideal for theme, authentication, and global state 
+❌ Not a replacement for complex state management like Redux
+
+6. es6 features
+
+ES6 introduced powerful features for modern JavaScript development: 
+✅ let & const – Block-scoped variable declarations. 
+✅ Arrow functions – Shorter function syntax (()=>{}).
+✅ Template literals – ${variable} inside backticks for dynamic strings. 
+✅ Destructuring – Easy extraction of object/array properties. 
+✅ Spread & Rest (...) – Expands or collects elements flexibly. 
+✅ Default parameters – Assign default values in functions. 
+✅ Classes – Simplified object-oriented programming. 
+✅ Modules (import/export) – Enables modular code structure. 
+✅ Promises – Handles asynchronous operations (then/catch). 
+✅ Map & Set – New data structures for unique values and fast lookups.
+
+
+
+7. why we use promises?
+
+We use Promises in JavaScript to handle asynchronous operations efficiently. 
+They help avoid callback hell and make code more readable by using .then() and .catch() for handling success and errors.
+
+✅ Improves readability – Avoids nested callbacks 
+✅ Handles async operations – Fetch API, database queries, timers 
+✅ Error handling – .catch() method simplifies error management 
+✅ Chaining support – .then() allows sequential execution
+
+Ex:
+fetch("https://api.example.com/data")
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
+
+
+8. virtual DOM?
+
+The Virtual DOM is a lightweight copy of the actual DOM that React uses to improve performance.
+
+✅ Fast Updates – React updates the Virtual DOM first, then efficiently syncs with the real DOM. 
+✅ Minimizes Re-renders – Uses diffing to update only necessary elements, avoiding full page refreshes. 
+✅ Enhances Performance – Reduces direct manipulations of the real DOM, improving speed.
+
+Example process: 
+1️⃣ React updates Virtual DOM. 
+2️⃣ It compares changes (diffing). 
+3️⃣ Only necessary updates are applied to the real DOM.
+
+9. props drilling?
+
+Props drilling occurs when data (props) is passed deeply through multiple nested components in React, even when some components don’t need it.
+
+✅ Problem: Makes code harder to manage in large applications. 
+✅ Solution: Use Context API or state management (Redux, Zustand, etc.) to avoid unnecessary prop passing.
+
+
+10. webpacks uses why? 
+
+Webpack is a powerful JavaScript module bundler used to optimize and manage assets in web applications.
+
+✅ Bundles & Minifies – Combines multiple files into one, reducing load time. 
+✅ Code Splitting – Loads only necessary code for better performance. 
+✅ Asset Management – Handles CSS, images, and fonts efficiently. 
+✅ Hot Module Replacement – Allows real-time updates during development. 
+✅ Tree Shaking – Removes unused code for a smaller bundle size.
+
+
+11. without npm project will run?
+
+Yes, a JavaScript project can run without npm, but it depends on how dependencies are managed.
+
+🔥 Explanation:
+Pure JavaScript Projects (Vanilla JS) can run without npm if dependencies are manually included via CDN or local files.
+
+Node.js Applications may require npm for package management, but can use manual installation or alternative package managers like Yarn or PNPM.
+
+React, Vue, or Angular Projects typically rely on npm for dependencies and won't run properly without a package manager.
+
+
+12. how to start rendering in react.js project
+
+🚀 Basic Steps to Start Rendering
+✅ Import React and ReactDOM:
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+
+
+✅ Use ReactDOM.createRoot() (React 18+):
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+
+✅ Ensure the root div exists in index.html:
+<div id="root"></div>
+
+This initializes the React app and renders the App component inside the root element.
+
+13. how react code will get executed?
+
+React code executes in the following steps:
+
+✅ JSX Compilation – JSX is transformed into JavaScript using Babel. 
+✅ Component Rendering – React creates the Virtual DOM. 
+✅ Reconciliation – React compares Virtual DOM changes with the real DOM. 
+✅ DOM Updates – React efficiently updates only necessary elements. 
+✅ Event Handling – React listens for user interactions via synthetic events.
+
+
+14. how to achieve optimization? 
+
+React.js optimization can be achieved through several techniques:
+
+✅ Use React.memo – Prevents unnecessary re-renders for functional components. 
+✅ Use useCallback & useMemo – Optimizes function and value memoization. 
+✅ Code Splitting – Load only required components using React.lazy & Suspense. 
+✅ Avoid unnecessary state updates – Keep components minimal and optimize re-renders. 
+✅ Virtualization – Improve performance for large lists with react-window. 
+✅ Efficient rendering – Use key props correctly to avoid unwanted re-renders. 
+✅ Avoid props drilling – Use Context API or Redux for state management.
+
+
+15. difference between normal reducer and useReducer
+
+✅ Normal Reducer – A function that manages state updates, typically used in Redux for global state management. 
+✅ useReducer – A React hook that manages local component state using a reducer function, useful for complex state logic inside components.
+
+Key Differences:
+
+Normal Reducer works globally via Redux, while useReducer is for local component state.
+
+useReducer is a React Hook, does not require Redux setup.
+
+Redux Reducers use dispatch(actions), while useReducer relies on dispatch within the component.
+
+
+16. class vs className
+
+In HTML, class is an attribute used to define a CSS class for styling elements. 
+In React (JSX), className is used instead of class, because class is a reserved keyword in JavaScript.
+
+✅ HTML Example:
+<div class="container">Hello</div>
+
+✅ React Example:
+<div className="container">Hello</div>
+
+
+17. React Native
+
+React Native is a framework for building mobile applications using React and JavaScript.
+
+✅ Cross-platform – Develop once, run on both iOS & Android. 
+✅ Uses JavaScript & JSX – Write mobile apps using familiar React syntax. 
+✅ Native Performance – Renders UI components using native platform APIs. 
+✅ Reusable Components – Share code between mobile and web applications. 
+✅ Popular for mobile development – Used by apps like Instagram, Facebook, and Airbnb.
+
+18. how many ways there to create react native app
+
+You can create a React Native app in three main ways:
+
+✅ Expo CLI – Easiest way, requires minimal setup (npx create-expo-app myApp). 
+✅ React Native CLI – More customizable, allows direct access to native code (npx react-native init myApp). 
+✅ Third-party tools – Tools like Ignite or ReNative for advanced setups.
+
+19. redux saga (put, call, every)
+
+Redux Saga is a middleware for handling side effects (like async API calls) in Redux using generator functions.
+
+✅ put() – Dispatches an action to the Redux store. 
+✅ call() – Calls a function (like an API request) and waits for the result. 
+✅ takeEvery() – Listens for every occurrence of an action and runs a saga.
+
+Example:
+function* fetchDataSaga() {
+  const data = yield call(api.getData);
+  yield put({ type: "DATA_SUCCESS", payload: data });
+}
+
+function* watchFetchData() {
+  yield takeEvery("FETCH_DATA", fetchDataSaga);
+}
+
+
+20. redux without api call
+
+✅ Yes! Redux can manage state without API calls.
+
+🚀 Use Cases Without API Calls:
+
+UI State Management – Toggle dark mode, modal visibility.
+
+Local Data Handling – Manage form inputs across components.
+
+Client-Side Caching – Store temporary data for better performance.
+
+Static Data Flow – Predefined data for UI updates.
+
+Example without API calls:
+
+const initialState = { count: 0 };
+
+function counterReducer(state = initialState, action) {
+  if (action.type === "INCREMENT") {
+    return { count: state.count + 1 };
+  }
+  return state;
+}
+
+
+21. What is HOC? purpose?
+
+A Higher-Order Component (HOC) in React is a function that takes a component as input and returns a new enhanced component.
+
+✅ Purpose:
+
+Code reusability – Share logic across multiple components.
+
+Enhance components – Add additional functionality without modifying the original.
+
+Example: Wrapping a component with authentication logic.
+
+🚀 Example of HOC:
+
+const withAuth = (Component) => (props) =>
+  props.isAuthenticated ? <Component {...props} /> : <p>Please login</p>;
+
+
+22. sort array without sort method, let arr = [1,5,7,2,3]
+
+You can sort an array without using the sort() method by implementing a sorting algorithm manually, such as Bubble Sort or Insertion Sort.
+
+🚀 Example: Bubble Sort
+function bubbleSort(arr) {
+  let n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]; // Swap values
+      }
+    }
+  }
+  return arr;
+}
+
+let arr = [1, 5, 7, 2, 3];
+console.log(bubbleSort(arr)); // Output: [1, 2, 3, 5, 7]
+
+
+23. closure? example
+A closure in JavaScript is a function that remembers the variables from its outer scope even after the outer function has executed.
+
+🔥 Example Closure Function
+function outerFunction(x) {
+  return function innerFunction(y) {
+    return x + y; // `innerFunction` remembers `x` from `outerFunction`
+  };
+}
+
+const add5 = outerFunction(5); 
+console.log(add5(3)); // Output: 8
+
+✅ Closure retains access to x even after outerFunction finishes. 
+✅ Useful for encapsulation, maintaining private variables, and function factories.
+
+
+24. let, var, const difference
+In JavaScript, let, var, and const are used for variable declarations, but they differ in scope, mutability, and hoisting:
+
+✅ var – Function-scoped, can be redeclared and updated, hoisted but uninitialized. 
+✅ let – Block-scoped, cannot be redeclared, but can be updated, hoisted but uninitialized. 
+✅ const – Block-scoped, cannot be reassigned or redeclared, must be initialized.
+
+Ex: 
+var a = 10; // Function-scoped
+let b = 20; // Block-scoped
+const c = 30; // Block-scoped, immutable
