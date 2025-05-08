@@ -894,3 +894,89 @@ Ex:
 var a = 10; // Function-scoped
 let b = 20; // Block-scoped
 const c = 30; // Block-scoped, immutable
+
+25. What is Hoisting?
+
+Hoisting in JavaScript is the process where variable and function declarations are moved to the top of their scope before execution.
+
+✅ Function hoisting – Allows calling a function before its declaration. 
+✅ Variable hoisting – var is hoisted but initialized as undefined,
+while let & const are hoisted but not initialized (cause errors if accessed before declaration).
+
+temporal dead zone: it is zone where it belong.
+
+26. function test(){
+  var x = 10;
+  var x;
+  var x = 40;
+  console.log("x is" + x);
+}
+
+test();
+40
+
+27. Explain the scope of temporal dead zone?
+{
+  //TDX starts
+  const func = () => console.log(letVar);
+  // TDZ
+  let letVar = 3; // end TDZ
+  func();
+}
+
+28. why var hoisiting is present in javascript?
+var hoisting is present in JavaScript due to its interpreted nature and execution model.
+
+🚀 Reasons for var Hoisting: 
+✅ Historical Design Choice – JavaScript was originally designed for quick scripting, and var hoisting made it more flexible. 
+✅ Function Execution Flexibility – Allows variables to be declared anywhere within a function but still accessible at the top. 
+✅ Compilation Phase Handling – During execution, JavaScript hoists declarations (moves them to the top of their scope) before executing code.
+
+29. Pure functions: Those functions that are deterministic in nature.
+
+function areaofRectangle(length, width){
+  return length * width;
+}
+
+areaofRectangle(10,20);
+areaofRectangle(10,20);
+areaofRectangle(10,30);
+areaofRectangle(40,20);
+
+30. Impure functions - those functions that are non-determinstic in nature.
+
+function test(length, width){
+  const temp = Math.floor(Math.random() * 10);
+  return length * width * temp;
+}
+test(10, 20);
+
+31. what is console.log('hello world') ; //logging , debugging.
+
+console.log() is function.
+
+32. shallow copy:  copy by reference
+
+deep copy: copy by value
+
+33. A shallow copy duplicates only the reference to nested objects, meaning changes to the copy affect the original. 
+A deep copy creates an independent copy of all nested objects, ensuring no link to the original data.
+
+🚀 Example in JavaScript: ✅ Shallow Copy (using Object.assign() or spread operator ...)
+const obj1 = { name: "Vijay", details: { age: 30 } };
+const shallowCopy = { ...obj1 }; 
+shallowCopy.details.age = 35; 
+console.log(obj1.details.age); // ❌ Changes original object (shallow copy)
+
+
+✅ Deep Copy (using JSON.parse(JSON.stringify()) or structuredClone)
+
+const obj2 = { name: "Vijay", details: { age: 30 } };
+const deepCopy = JSON.parse(JSON.stringify(obj2)); 
+deepCopy.details.age = 35; 
+console.log(obj2.details.age); // ✅ Original remains unchanged (deep copy)
+
+
+================================================
+
+

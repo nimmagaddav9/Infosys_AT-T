@@ -1,0 +1,41 @@
+// most frequently asked Interview questions
+Here are some frequently asked React.js interview questions at Infosys:
+Core React Concepts:
+What are the key features of React?
+Explain the difference between functional and class components.
+What are props and state in React? How do they differ?
+Describe the component lifecycle methods.
+What are React Hooks? Explain some commonly used hooks like useState, useEffect, and useContext.
+What is JSX? How is it different from HTML?
+Explain virtual DOM and how it improves performance.
+What is the significance of keys in React lists?
+Component Design and Architecture:
+How do you handle data flow between components?
+What are higher-order components (HOCs)?
+What are render props?
+How do you optimize React component rendering?
+Explain the concept of component composition.
+State Management:
+What is Redux? Explain its core principles and how it works.
+What is Context API? When would you use it instead of Redux?
+How do you handle asynchronous operations in React with state management?
+Testing:
+What types of testing can be performed on React applications?
+Which testing libraries do you prefer to use with React?
+Performance Optimization:
+How can you optimize the performance of a React application?
+What are some common performance bottlenecks in React applications?
+Explain the use of React.memo, useCallback, and useMemo.
+Routing:
+How do you implement routing in a React application?
+Explain different types of routing techniques.
+Error Handling:
+How do you handle errors in React components?
+What are error boundaries?
+JavaScript Fundamentals:
+Infosys may also ask questions related to JavaScript fundamentals, including:
+Closures
+Promises and async/await
+this keyword
+ES6+ features
+It's beneficial to have practical experience with React and be able to demonstrate your skills through coding examples or by discussing projects you've worked on.
