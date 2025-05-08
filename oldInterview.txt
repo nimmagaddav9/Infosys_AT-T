@@ -979,4 +979,248 @@ console.log(obj2.details.age); // ✅ Original remains unchanged (deep copy)
 
 ================================================
 
+34. Can you provide an example of a complex React.js project you worked on and explain your role in its development?
+
+In a recent project, I played a significant role in developing a complex React.js feature for a flight ticket booking system. 
+One of the challenges involved resolving issues related to account setup. 
+To tackle this, I utilized Postman to interact with multiple APIs and successfully unlock accounts, ensuring smooth user experience. 
+I also documented this process for team reference, promoting efficiency and collaboration. Moreover, I have experience in managing weekly releases,
+effectively addressing any backend blockers to maintain a seamless UI. 
+his hands-on experience in addressing complex challenges showcases my ability to contribute effectively to React.js projects.
+
+35. How do you ensure the scalability and performance optimization of React.js applications you work on?
+
+In my React.js development work, I prioritize scalability and performance optimization by leveraging important tools and techniques. 
+For instance, I implement the use of useMemo and useCallback hooks to efficiently memoize values and minimize recalculations. 
+Additionally, I utilize code splitting and lazy loading to ensure that resources are loaded only when needed, enhancing the application's
+overall performance. Moreover, I focus on optimizing assets and images to reduce load times. By strategically applying these methods, 
+I have consistently improved the performance of React.js applications, ensuring a smooth and responsive user experience
+
+36. In your opinion, what are the key differences between React.js functional components and class components, and when would you choose one over the other?
+
+React.js provides two main types of components: functional components and class components. 
+The key difference lies in their syntax and usage. 
+Class components are defined as a class that extends the 'Component' class from React and uses lifecycle methods for actions like mounting, 
+updating, and unmounting. On the other hand, functional components are implemented as plain JavaScript functions. 
+With the introduction of hooks in React 16.8, functional components now support state management and side effects through hooks like useState, 
+useEffect, useCallback, useRef, and useMemo. 
+It's important to note that both types can be used effectively, but functional components are currently favored due to the simplicity and 
+reusability offered by hooks. This allows for clearer and more concise code.
+
+=======================================================================
+Technical Round - 45 min to 1hr
+
+1. ReactJS
+2. JavaScript
+3. CSS3
+4. HTML5
+
+ReactJS
+
+1. Explain redux and its architecture
+
+Redux is a state management library for JavaScript applications, often used with React to manage global state in a predictable way.
+
+Redux Architecture:
+Store – Holds the application’s state.
+
+Action – A plain object that describes what happened (e.g., { type: 'INCREMENT' }).
+
+Reducer – A pure function that takes the current state and an action, and returns a new state.
+
+Dispatch – Sends actions to the store.
+
+Subscriber – Components subscribe to the store to receive updates.
+
+Data flow is unidirectional:
+Component → Dispatch Action → Reducer → New State → UI Update
+
+2. What is Virtual DOM and how does it work?
+
+Virtual DOM is a lightweight copy of the real DOM. 
+When the state changes, React creates a new Virtual DOM, compares it with the old one (diffing), and updates only 
+the changed parts in the real DOM for better performance.
+
+3. What is Reconciliation?
+
+✅ Reconciliation – React compares Virtual DOM changes with the real DOM. 
+
+4. Have you worked on class component or functional?
+
+"Yes, I have experience working with both class and functional components in React. 
+Initially, I used class components for state management and lifecycle methods, but with the introduction of hooks, 
+I transitioned to functional components for their simplicity and reusability. 
+Functional components, along with hooks like useState and useEffect, have allowed me to write cleaner, more maintainable code. 
+While I can work with class components when needed, I primarily use functional components in newer projects to align with modern React practices.
+
+
+5. what are hooks in react and why are they used?
+
+Hooks in React are functions that let you use state and lifecycle features in functional components, without needing class components.
+
+Why are they used?
+Manage state: useState allows state management in functional components.
+
+Side effects: useEffect handles data fetching, subscriptions, and other effects.
+
+Performance optimization: useMemo and useCallback help prevent unnecessary re-renders.
+
+Custom logic reuse: Custom hooks enable sharing logic across components.
+
+6. how do you setup routing in react application?
+
+Use React Router for routing:
+
+Install it: npm install react-router-dom
+
+Wrap the app in <BrowserRouter>
+
+Use <Routes> and <Route> to define paths
+
+Use <Link> for navigation
+
+7. What technique can be used to optimize react application?
+
+Optimizing a React app: 
+Use React.memo, useCallback, and useMemo to prevent unnecessary re-renders. 
+Apply lazy loading, code splitting, and virtualization for efficient rendering. 
+Optimize state management, minimize useEffect dependencies, and use SSR/SSG for faster load times.
+
+javascript
+---------------
+1. What is closure in Javascript? what is lexical scope?
+
+Closure allows a function to remember and access its parent’s variables even after execution.
+
+Lexical scope determines variable accessibility based on where functions are declared in the code.
+
+2. what is hoisting in javascript? 
+
+Hoisting is JavaScript's behavior of moving variable and function declarations to the top of their scope before execution. 
+
+Functions are fully hoisted, while var variables are hoisted but remain undefined until assigned. 
+let and const are hoisted but inaccessible until initialized.
+
+3. what are callback, promises and async-await?
+
+Callback: A function passed as an argument to another function, executed later. 
+
+Promise: An object representing a pending, fulfilled, or rejected asynchronous operation. 
+
+Async/Await: A way to write asynchronous code more cleanly, making it look synchronous. 
+
+All three help manage async tasks like API calls and file handling.
+
+
+4. what are the ES6 feature?
+
+ES6 features:
+
+Let & Const: Block-scoped variables.
+
+Arrow Functions: Shorter function syntax (() =>).
+
+Template Literals: String interpolation (${}) and multi-line strings.
+
+Destructuring: Unpacking values from arrays/objects.
+
+Default Parameters: Default values for function parameters.
+
+Rest & Spread: Handle arrays/objects (...).
+
+Classes: OOP syntax for creating classes.
+
+Modules: import and export for modular code.
+
+Promises: Asynchronous operations handling.
+
+Iterators & Generators: Custom iteration with for...of and yield.
+
+
+
+5. What is Event Loops in JS?
+
+Event Loop in JavaScript is a mechanism that handles asynchronous operations. 
+It allows the JavaScript engine to execute non-blocking code (like I/O operations) by using the call stack, callback queue, and event queue.
+
+Call Stack: Where the functions are executed.
+
+Callback Queue: Stores the callback functions that need to be executed after the call stack is clear.
+
+Event Loop: Continuously checks if the call stack is empty, and if so, moves the first event from the callback queue to the stack for execution.
+
+6. What is ES6 Array methods - map(), filter()
+
+map(): Creates a new array by applying a function to each element of the original array.
+
+const arr = [1, 2, 3];
+const newArr = arr.map(x => x * 2); // [2, 4, 6]
+
+filter(): Creates a new array with all elements that pass the condition in the provided function.
+
+const arr = [1, 2, 3, 4];
+const evenArr = arr.filter(x => x % 2 === 0); // [2, 4]
+
+
+
+
+CSS3:
+
+1. Explain the Box Model in CSS?
+
+The CSS Box Model describes how elements are structured on a page. It includes:
+
+Content – The actual text or image.
+
+Padding – Space around the content.
+
+Border – Wraps around the padding.
+
+Margin – Space outside the border, separating elements.
+
+2. What is difference between position Absolute & Relative?
+
+position: relative moves an element relative to its normal position.
+position: absolute removes the element from the normal flow and positions it relative to the nearest positioned ancestor.
+
+3. What is the difference between rem and px?
+
+px is an absolute unit — it defines a fixed size in pixels.
+rem is a relative unit — it scales based on the root element’s (<html>) font size.
+
+Example: If root font size is 16px, then 1rem = 16px.
+
+4. What is Flex box?
+
+Flexbox is a CSS layout model that makes it easy to align, space, and distribute items in a container, even when their size is unknown.
+
+It uses properties like display: flex, justify-content, align-items, and flex-direction to create responsive layouts.
+
+5. What is Grid Layout?
+
+CSS Grid Layout is a 2D layout system used to design web pages in rows and columns.
+
+It allows precise control over placement using properties like display: grid, grid-template-columns, grid-template-rows, and grid-gap.
+
+
+HTML5:
+
+1. What is Semantic Elements in HTML?
+Semantic elements in HTML clearly describe their meaning to both the browser and developer.
+Examples include <article>, <section>, <header>, and <footer>. They improve readability, accessibility, and SEO.
+
+2. What is purpose of meta tag in HTML?
+
+The meta tag in HTML provides metadata about the web page, such as character encoding, author, description, and 
+viewport settings. It's mainly used for SEO and browser behavior control
+
+3. What is block level and inline element?
+
+Block-level elements take up the full width and start on a new line (e.g., <div>, <p>, <h1>).
+Inline elements take up only as much width as needed and do not start on a new line (e.g., <span>, <a>, <strong>).
+
+
+4. What is local storage vs Session Storage
+Local Storage stores data with no expiration time — it persists even after the browser is closed.
+Session Storage stores data only for the duration of the page session — it clears when the tab or browser is closed.
 
