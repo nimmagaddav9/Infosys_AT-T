@@ -3803,7 +3803,8 @@ interface Props{
 
 87. How do you write a simple test in Jest?
 Jest is a JavaScript testing framework maintained by Facebook. 
-It is commonly used with React because it provides a simple and powerful testing solution with features like snapshot testing, coverage reporting, and built in assertions.
+It is commonly used with React because it provides a simple and powerful testing solution with features like 
+snapshot testing, coverage reporting, and built in assertions.
 
 //JEST, RTL
 
@@ -3818,17 +3819,27 @@ test('renders MyComponent', ()=>{
 });
 
 89. How can you find elements in the DOM using the React Testing Library?
-//first render the component, then check if we have the text "helloworld" use getByText
-//if element toBeIntheDocument();
+
+You can find elements in the DOM using React Testing Library by using query functions like:
+
+getByText – Finds elements by visible text
+
+getByRole – Finds elements by their ARIA role
+
+getByLabelText – Finds form inputs by associated label
+
+getByPlaceholderText – Finds inputs by placeholder
+
+getByTestId – Finds elements using a data-testid attribute
 
 90. How do you simulate user events in React Testing Library?
 
-//first render the component.
-//then fireEvent.click(button);
+You simulate user events in React Testing Library using the userEvent utility (from @testing-library/user-event). 
+It allows you to mimic real user interactions like clicking, typing, or selecting:
 
 91. How can you test component props with React Testing Library?
-//first render the component.
-expect //title present or not.
+You can test component props with React Testing Library by rendering the component with the desired props and asserting the 
+expected output or behavior using queries like getByText, getByRole, etc. Props are tested indirectly through their effect on the UI.
 
 92. create a Controlled Input Component?
 
@@ -3846,4 +3857,31 @@ expect //title present or not.
 
 99. Implement a simple form Component?
 
-100. how to handle erro in simple form component?
+100. how to handle error in simple form component?
+
+To handle errors in a simple React form, use useState to track form values and errors. 
+Validate inputs on submit, update the errors state, and conditionally display error messages. 
+This ensures form fields are validated and feedback is shown to users.
+
+101: 
+React.js drawbacks:
+
+Steep learning curve for beginners due to its ecosystem.
+
+Boilerplate and config overhead for setup.
+
+Frequent updates can break code.
+
+JSX may feel unnatural to some.
+
+Performance issues if not optimized.
+
+Lacks built-in solutions (routing, state management).
+
+SEO limitations without SSR tools like Next.js.
+
+Debugging complexity in large apps.
+
+Large bundle sizes if not managed.
+
+Not a full framework, relies on third-party tools.
