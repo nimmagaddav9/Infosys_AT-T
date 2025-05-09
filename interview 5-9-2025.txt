@@ -1,0 +1,48 @@
+Rajesh Rajasekaran <Rajesh_Rajasekaran@infosys.com>
+Ashok Ramachandran Srinivasan <Ashok_Srinivasan@infosys.com>,
+Varadarassou Gobalane <Varadarassou_G@infosys.com>
+
+react.js, next.js, node.js 
+
+// Online Javascript Editor for free
+// Write, Edit and Run your Javascript code using JS Online Compiler
+
+// interview with infosys
+ 
+// Output: Interview With Infosys
+
+function toCamelCase(str){
+    return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+}
+
+console.log(toCamelCase('inetrview with infosys'));
+
+
+// Inetrview With Infosys
+
+=== Code Execution Successful ===
+=================================
+
+can you tell the output:
+
+const obj1 : {
+const  a = 1;
+const b= funtion;
+}
+
+const c = b();
+
+obj1().b;
+c();
+
+==========================
+
+1. How to handle performance in react app in your company?
+
+2. Find and filter.
+
+3. Get server-side props and then get initial props.
+
+
+
+
