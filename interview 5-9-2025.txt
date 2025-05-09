@@ -1,6 +1,4 @@
-Rajesh Rajasekaran <Rajesh_Rajasekaran@infosys.com>
-Ashok Ramachandran Srinivasan <Ashok_Srinivasan@infosys.com>,
-Varadarassou Gobalane <Varadarassou_G@infosys.com>
+Infosys Interview - 30 minutes
 
 react.js, next.js, node.js 
 
