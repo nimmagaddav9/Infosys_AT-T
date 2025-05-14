@@ -1,5 +1,20 @@
 Infosys Interview - 30 minutes
 
+1. How to handle performance in react app in your company?
+
+2. Find and filter.
+
+3. Get server-side props and then get initial props.
+
+4. In parent component, I have multiple child components. I am trying to update one of the child components. It is re-rendering everything. 
+So whatever the components we have under parent, also parent, everything is getting re-rendered. So what could be the reason for that? How you can fix that?
+
+5. Like I have a component, okay, like, say, a checkbox, the initial value is false, okay? When I try to check the checkbox, okay, it shows me false. 
+Ideally, I should get true. It shows me false. So what could be the reason how you can fix it?
+
+6. So that's the value I have it in array. I want only the value 1. So remaining things will be skipped and the output will be 1. Only 1. With the help of... Number 1. 
+So it will be like inside array, we will have 2 1s. Okay. So how you can do that? I think we can use like the key property.
+
 react.js, next.js, node.js 
 
 // Online Javascript Editor for free
@@ -34,12 +49,6 @@ obj1().b;
 c();
 
 ==========================
-
-1. How to handle performance in react app in your company?
-
-2. Find and filter.
-
-3. Get server-side props and then get initial props.
 
 
 
